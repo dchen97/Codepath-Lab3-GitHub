@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "EBE16112AA1AFC96F3E80BEBB76B514633C6A3EC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "EBE16112AA1AFC96F3E80BEBB76B514633C6A3EC" : 9223372036854775807,
+    "10026771D7EF023E9D533CC0715A6E31464FB7F6" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5E8EC97F-DC98-4BBF-84BB-0292DD9A8097",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "EBE16112AA1AFC96F3E80BEBB76B514633C6A3EC" : "codepath-lab3-gh\/",
+    "10026771D7EF023E9D533CC0715A6E31464FB7F6" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "GithubDemo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "source\/GithubDemo.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dchen97\/Codepath-Lab3-GitHub.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "10026771D7EF023E9D533CC0715A6E31464FB7F6"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dchen97\/Codepath-Lab3-GitHub.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EBE16112AA1AFC96F3E80BEBB76B514633C6A3EC"
+    }
+  ]
+}
