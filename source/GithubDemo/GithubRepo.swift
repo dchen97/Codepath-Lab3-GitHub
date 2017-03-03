@@ -56,6 +56,8 @@ class GithubRepo: CustomStringConvertible {
     class func fetchRepos(_ settings: GithubRepoSearchSettings, successCallback: @escaping ([GithubRepo]) -> (), error: ((Error?) -> ())?) {
         let manager = AFHTTPRequestOperationManager()
         let params = queryParamsWithSettings(settings)
+        
+        print(params)
 
         manager.get(reposUrl, parameters: params, success: { (operation: AFHTTPRequestOperation, responseObject: Any) in
             if let response = responseObject as? NSDictionary, let results = response["items"] as? NSArray {

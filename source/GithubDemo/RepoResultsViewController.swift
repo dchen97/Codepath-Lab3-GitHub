@@ -10,8 +10,9 @@ import UIKit
 import MBProgressHUD
 
 // Main ViewController
-class RepoResultsViewController: UIViewController, UITableViewDataSource {
+class RepoResultsViewController: UIViewController, UITableViewDataSource, SettingsPresentingViewControllerDelegate {
 
+    @IBOutlet weak var settingsBarButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     var searchBar: UISearchBar!
     var searchSettings = GithubRepoSearchSettings()
@@ -56,7 +57,7 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource {
 
             MBProgressHUD.hide(for: self.view, animated: true)
             }, error: { (error) -> Void in
-                print(error)
+                print(error!)
         })
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -78,6 +79,29 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return repos.count
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navController = segue.destination as! UINavigationController
+        let vc = navController.topViewController as! SearchSettingsViewController
+        vc.settings = searchSettings
+        vc.delegate = self
+    }
+    
+    func didSaveSettings(settings: GithubRepoSearchSettings) {
+        searchSettings = settings
+        doSearch()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func didCancelSettings() {
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+}
+
+protocol SettingsPresentingViewControllerDelegate: class {
+    func didSaveSettings(settings: GithubRepoSearchSettings)
+    func didCancelSettings()
 }
 
 
@@ -97,7 +121,9 @@ extension RepoResultsViewController: UISearchBarDelegate {
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
+        searchSettings.searchString = searchBar.text
         searchBar.resignFirstResponder()
+        doSearch()
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
